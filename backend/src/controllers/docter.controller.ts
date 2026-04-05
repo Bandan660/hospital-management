@@ -48,11 +48,3 @@ export const updateDoctor = async (req: Request, res: Response): Promise<void> =
   }
 };
 
-export const deleteDoctor = async (req: Request, res: Response): Promise<void> => {
-  try {
-    await doctorService.delete(Number(req.params.id));
-    sendSuccess(res, null, 'Doctor deleted successfully');
-  } catch (err: any) {
-    sendError(res, err.message, err.status || 500);
-  }
-};

@@ -50,11 +50,6 @@ export class DoctorService {
     const doctor = await this.getById(id);
     return await doctor.update(data);
   }
-
-  async delete(id: number): Promise<void> {
-    const doctor = await this.getById(id);
-    await doctor.destroy();
-  }
 }
 
 export default new DoctorService();
